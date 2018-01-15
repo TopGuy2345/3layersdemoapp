@@ -9,7 +9,7 @@
 </html>
 <?php
 
-include 'DBconnection.php';
+include 'includes/DBconnection.php';
 
 $DBConnect= new DBConnection();
 $DBConnect->connect($SERVER,$Connectioninfo,$link);
@@ -48,9 +48,8 @@ echo '  </tr>
 function getCstmrsnum($var,$Connectioninfo,$link){
   $tsql= "SELECT COUNT(CustomerID) FROM dbo.Customers";
   $getCustmrs=sqlsrv_query($link,$tsql);
-    echo "<h1> The number of Customers </h1>";
-    echo '<div class="panel panel-default">
-<div class="panel-body">';
+    echo '<h1> The number of Customers is ';
+
   while( $row = sqlsrv_fetch_array( $getCustmrs, SQLSRV_FETCH_NUMERIC))
   {
        echo $row[0];
@@ -58,7 +57,7 @@ function getCstmrsnum($var,$Connectioninfo,$link){
        echo "<br/>";
 
   }
-  echo '</div></div><br/>';
+  echo '</h1>';
 }
 
 
