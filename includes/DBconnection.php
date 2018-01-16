@@ -1,9 +1,9 @@
 <?php
 
 
-$SERVER="DESKTOP-VCSN1SR";
+$SERVER="";
 
-$Connectioninfo=array('Database'=>'Northwind',"UID"=>"cesar","PWD"=>"1234");
+$Connectioninfo=array('Database'=>'Northwind',"UID"=>"cesar","PWD"=>"");
 $link = sqlsrv_connect($SERVER,$Connectioninfo);
 class DBConnection{
 function connect($SERVER,$Connectioninfo,$link){
